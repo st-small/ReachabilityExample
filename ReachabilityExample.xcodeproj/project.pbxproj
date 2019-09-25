@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		844891E1233BBBEE00D47CF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891E0233BBBEE00D47CF4 /* AppDelegate.swift */; };
-		844891E3233BBBEE00D47CF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891E2233BBBEE00D47CF4 /* ViewController.swift */; };
-		844891E6233BBBEE00D47CF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844891E4233BBBEE00D47CF4 /* Main.storyboard */; };
+		844891E3233BBBEE00D47CF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891E2233BBBEE00D47CF4 /* MainViewController.swift */; };
 		844891E8233BBBF100D47CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844891E7233BBBF100D47CF4 /* Assets.xcassets */; };
 		844891EB233BBBF100D47CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844891E9233BBBF100D47CF4 /* LaunchScreen.storyboard */; };
+		844891F5233BBFAD00D47CF4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891F4233BBFAD00D47CF4 /* NetworkService.swift */; };
+		844891F7233BC18900D47CF4 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891F6233BC18900D47CF4 /* NetworkDataFetcher.swift */; };
+		844891FA233BC92C00D47CF4 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891F9233BC92C00D47CF4 /* UserResponse.swift */; };
+		844891FC233BCD1400D47CF4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891FB233BCD1400D47CF4 /* API.swift */; };
+		84B13371233BE60300D86CC0 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B13370233BE60300D86CC0 /* Reachability.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		844891DD233BBBEE00D47CF4 /* ReachabilityExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReachabilityExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844891E0233BBBEE00D47CF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		844891E2233BBBEE00D47CF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		844891E5233BBBEE00D47CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		844891E2233BBBEE00D47CF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		844891E7233BBBF100D47CF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844891EA233BBBF100D47CF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844891EC233BBBF100D47CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844891F4233BBFAD00D47CF4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		844891F6233BC18900D47CF4 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		844891F9233BC92C00D47CF4 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
+		844891FB233BCD1400D47CF4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		84B13370233BE60300D86CC0 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B13371233BE60300D86CC0 /* Reachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				844891DF233BBBEE00D47CF4 /* ReachabilityExample */,
 				844891DE233BBBEE00D47CF4 /* Products */,
+				84B1336F233BE60300D86CC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +64,49 @@
 		844891DF233BBBEE00D47CF4 /* ReachabilityExample */ = {
 			isa = PBXGroup;
 			children = (
+				844891E2233BBBEE00D47CF4 /* MainViewController.swift */,
+				844891F3233BBD4600D47CF4 /* Services */,
+				844891F2233BBD3500D47CF4 /* Environment */,
+			);
+			path = ReachabilityExample;
+			sourceTree = "<group>";
+		};
+		844891F2233BBD3500D47CF4 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
 				844891E0233BBBEE00D47CF4 /* AppDelegate.swift */,
-				844891E2233BBBEE00D47CF4 /* ViewController.swift */,
-				844891E4233BBBEE00D47CF4 /* Main.storyboard */,
 				844891E7233BBBF100D47CF4 /* Assets.xcassets */,
 				844891E9233BBBF100D47CF4 /* LaunchScreen.storyboard */,
 				844891EC233BBBF100D47CF4 /* Info.plist */,
 			);
-			path = ReachabilityExample;
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		844891F3233BBD4600D47CF4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				844891F8233BC91D00D47CF4 /* Models */,
+				844891F4233BBFAD00D47CF4 /* NetworkService.swift */,
+				844891F6233BC18900D47CF4 /* NetworkDataFetcher.swift */,
+				844891FB233BCD1400D47CF4 /* API.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		844891F8233BC91D00D47CF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				844891F9233BC92C00D47CF4 /* UserResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84B1336F233BE60300D86CC0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84B13370233BE60300D86CC0 /* Reachability.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +119,7 @@
 				844891D9233BBBEE00D47CF4 /* Sources */,
 				844891DA233BBBEE00D47CF4 /* Frameworks */,
 				844891DB233BBBEE00D47CF4 /* Resources */,
+				84B13372233BE63B00D86CC0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -124,18 +170,42 @@
 			files = (
 				844891EB233BBBF100D47CF4 /* LaunchScreen.storyboard in Resources */,
 				844891E8233BBBF100D47CF4 /* Assets.xcassets in Resources */,
-				844891E6233BBBEE00D47CF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84B13372233BE63B00D86CC0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Reachability.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		844891D9233BBBEE00D47CF4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844891E3233BBBEE00D47CF4 /* ViewController.swift in Sources */,
+				844891FA233BC92C00D47CF4 /* UserResponse.swift in Sources */,
+				844891F7233BC18900D47CF4 /* NetworkDataFetcher.swift in Sources */,
+				844891E3233BBBEE00D47CF4 /* MainViewController.swift in Sources */,
+				844891F5233BBFAD00D47CF4 /* NetworkService.swift in Sources */,
+				844891FC233BCD1400D47CF4 /* API.swift in Sources */,
 				844891E1233BBBEE00D47CF4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +213,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		844891E4233BBBEE00D47CF4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				844891E5233BBBEE00D47CF4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		844891E9233BBBF100D47CF4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -284,7 +346,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3PTYV272Z4;
-				INFOPLIST_FILE = ReachabilityExample/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ReachabilityExample/Environment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ua.kr.ssh.ReachabilityExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,7 +368,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3PTYV272Z4;
-				INFOPLIST_FILE = ReachabilityExample/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/ReachabilityExample/Environment/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +380,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ua.kr.ssh.ReachabilityExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
