@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol Networking {
-    func request(path: String, params: [String: String], completion: @escaping (Data?, Error?) -> Void)
+    func request(path: String, params: [String: String], completion: @escaping (Data?, Error?) -> ())
 }
 
 public class NetworkService: NSObject, Networking {
@@ -27,12 +27,8 @@ public class NetworkService: NSObject, Networking {
         print(url)
     }
     
-    private func createDataTask(from requst: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask {
-        let configuration = URLSessionConfiguration.default
-        configuration.timeoutIntervalForResource = 300
-        configuration.waitsForConnectivity = true
-        let session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
-        return session.dataTask(with: requst, completionHandler: { (data, response, error) in
+    private func createDataTask(from requst: URLRequest, completion: @escaping (Data?, Error?) -> ()) -> URLSessionDataTask {
+        return URLSession.shared.dataTask(with: requst, completionHandler: { (data, response, error) in
             DispatchQueue.main.async {
                 completion(data, error)
             }
@@ -46,11 +42,5 @@ public class NetworkService: NSObject, Networking {
         components.path = path
         components.queryItems = params.map {  URLQueryItem(name: $0, value: $1) }
         return components.url!
-    }
-}
-
-extension NetworkService: URLSessionTaskDelegate {
-    public func urlSession(_ session: URLSession, taskIsWaitingForConnectivity task: URLSessionTask) {
-        
     }
 }

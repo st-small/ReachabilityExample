@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol DataFetcher {
-    func getUser(response: @escaping (UserResponse?) -> Void)
+    func getUser(response: @escaping (UserResponse?) -> ())
 }
 
 public class NetworkDataFetcher: DataFetcher {
@@ -20,7 +20,7 @@ public class NetworkDataFetcher: DataFetcher {
         self.networking = networking
     }
     
-    public func getUser(response: @escaping (UserResponse?) -> Void) {
+    public func getUser(response: @escaping (UserResponse?) -> ()) {
         networking.request(path: API.user, params: [:]) { (data, error) in
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")

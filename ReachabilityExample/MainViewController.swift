@@ -12,6 +12,7 @@ public class MainViewController: UIViewController {
     
     private var networking: Networking!
     private var fetcher: DataFetcher!
+    private let reachability = ReachabilityService()
     
     public override func loadView() {
         super.loadView()
@@ -28,12 +29,19 @@ public class MainViewController: UIViewController {
     }
     
     private func makeRequest() {
-        fetcher.getUser { (user) in
+//        fetcher.getUser { (user) in
+//            DispatchQueue.main.async { [weak self] in
+//                guard let `self` = self else { return }
+//                self.view.backgroundColor = .red
+//            }
+//        }
+        
+        reachability.addTask(task: .getUser(completion: { (user) in
             DispatchQueue.main.async { [weak self] in
                 guard let `self` = self else { return }
                 self.view.backgroundColor = .red
             }
-        }
+        }))
     }
 }
 

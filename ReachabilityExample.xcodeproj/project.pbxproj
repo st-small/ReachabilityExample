@@ -16,6 +16,7 @@
 		844891FA233BC92C00D47CF4 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891F9233BC92C00D47CF4 /* UserResponse.swift */; };
 		844891FC233BCD1400D47CF4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844891FB233BCD1400D47CF4 /* API.swift */; };
 		84B13371233BE60300D86CC0 /* Reachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B13370233BE60300D86CC0 /* Reachability.framework */; };
+		84B13374233BF8CE00D86CC0 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B13373233BF8CE00D86CC0 /* ReachabilityService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		844891F9233BC92C00D47CF4 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		844891FB233BCD1400D47CF4 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		84B13370233BE60300D86CC0 /* Reachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reachability.framework; path = Carthage/Build/iOS/Reachability.framework; sourceTree = "<group>"; };
+		84B13373233BF8CE00D86CC0 /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				844891F8233BC91D00D47CF4 /* Models */,
 				844891F4233BBFAD00D47CF4 /* NetworkService.swift */,
 				844891F6233BC18900D47CF4 /* NetworkDataFetcher.swift */,
+				84B13373233BF8CE00D86CC0 /* ReachabilityService.swift */,
 				844891FB233BCD1400D47CF4 /* API.swift */,
 			);
 			path = Services;
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B13374233BF8CE00D86CC0 /* ReachabilityService.swift in Sources */,
 				844891FA233BC92C00D47CF4 /* UserResponse.swift in Sources */,
 				844891F7233BC18900D47CF4 /* NetworkDataFetcher.swift in Sources */,
 				844891E3233BBBEE00D47CF4 /* MainViewController.swift in Sources */,
